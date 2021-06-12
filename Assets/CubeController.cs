@@ -1,18 +1,25 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CubeController : MonoBehaviour
 {
     private const float MOVE_SPEED = 5f;
+    private Vector2 direction = Vector2.zero;
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.D))
-        {
-            transform.position += Vector3.right * MOVE_SPEED * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position += Vector3.left * MOVE_SPEED * Time.deltaTime;
-        }
+        Vector2 move = direction * MOVE_SPEED * Time.deltaTime;
+        transform.position += new Vector3(move.x, move.y, 0);
     }
+
+    public void OnLStick(InputAction.CallbackContext context)
+    {
+        direction = context.ReadValue<Vector2>();
+    }
+
+    public void OnRStick()
+    {
+
+    }
+
 }
