@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
     private Camera cam;
     public Transform cameraOrigin;
 
-    private float CAMERA_SENSITIVITY = 0.005f;
+    private float CAMERA_SENSITIVITY = 0.01f;
     private float CAMERA_SPEED = 5f;
     private float CAMERA_DISTANCE = 10f;
     private float MAX_CAMERA_PITCH = Mathf.PI / 2;
@@ -16,6 +16,8 @@ public class CameraController : MonoBehaviour
     private float targetTheta = Mathf.PI / 2;
     private float targetPhi = Mathf.PI / 2;
 
+    private Vector2 rStickInput;
+
     void Start()
     {
         cam = Camera.main;
@@ -24,6 +26,13 @@ public class CameraController : MonoBehaviour
     {
         phi = Mathf.Lerp(phi, targetPhi, Time.deltaTime * CAMERA_SPEED);
         theta = Mathf.Lerp(theta, targetTheta, Time.deltaTime * CAMERA_SPEED);
+
+        targetTheta += rStickInput.x * CAMERA_SENSITIVITY;
+        targetPhi = Mathf.Clamp(
+            targetPhi + rStickInput.y * CAMERA_SENSITIVITY,
+            (Mathf.PI - MAX_CAMERA_PITCH) / 2,
+            Mathf.PI - (Mathf.PI - MAX_CAMERA_PITCH) / 2
+            );
 
         Vector3 targetPosition = new Vector3(
             CAMERA_DISTANCE * Mathf.Sin(theta) * Mathf.Sin(phi),
@@ -38,12 +47,15 @@ public class CameraController : MonoBehaviour
     public void OnRStick(InputAction.CallbackContext context)
     {
         var input = context.ReadValue<Vector2>();
-        targetTheta += input.x * CAMERA_SENSITIVITY;
-        targetPhi = Mathf.Clamp(
-            targetPhi + input.y * CAMERA_SENSITIVITY, 
-            (Mathf.PI - MAX_CAMERA_PITCH) / 2,
-            Mathf.PI  - (Mathf.PI - MAX_CAMERA_PITCH) / 2
-            );
-        
+        if (input.magnitude > 4)
+        {
+            rStickInput = input.normalized * 4;
+
+        }
+        else
+        {
+            rStickInput = input;
+
+        }
     }
 }
