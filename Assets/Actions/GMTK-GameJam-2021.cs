@@ -42,7 +42,7 @@ public class @GMTKGameJam2021 : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Gamepad"",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""LStick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

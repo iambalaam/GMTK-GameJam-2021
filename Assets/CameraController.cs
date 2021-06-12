@@ -46,16 +46,15 @@ public class CameraController : MonoBehaviour
 
     public void OnRStick(InputAction.CallbackContext context)
     {
+        Debug.Log("OnRStick()");
         var input = context.ReadValue<Vector2>();
-        if (input.magnitude > 4)
+        if (input.magnitude > 3)
         {
-            rStickInput = input.normalized * 4;
-
+            rStickInput = input.normalized * 3;
         }
         else
         {
             rStickInput = input;
-
         }
     }
 }
