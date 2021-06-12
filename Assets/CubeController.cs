@@ -15,11 +15,6 @@ public class CubeController : MonoBehaviour
     {
         Vector2 move = direction * MOVE_SPEED * Time.deltaTime;
         transform.position += new Vector3(move.x, move.y, 0);
-
-        if (transform.position.y > 4)
-        {
-            LevelManager.instance.NextScene();
-        }
     }
 
     public void OnLStick(InputAction.CallbackContext context)
