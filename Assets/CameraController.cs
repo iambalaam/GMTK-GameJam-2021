@@ -9,6 +9,7 @@ public class CameraController : MonoBehaviour
     private float CAMERA_SENSITIVITY = 0.005f;
     private float CAMERA_SPEED = 5f;
     private float CAMERA_DISTANCE = 10f;
+    private float MAX_CAMERA_PITCH = Mathf.PI / 2;
 
     private float theta = Mathf.PI / 2;
     private float phi = Mathf.PI / 2;
@@ -38,7 +39,11 @@ public class CameraController : MonoBehaviour
     {
         var input = context.ReadValue<Vector2>();
         targetTheta += input.x * CAMERA_SENSITIVITY;
-        targetPhi = Mathf.Clamp(targetPhi + input.y * CAMERA_SENSITIVITY, 0, Mathf.PI);
+        targetPhi = Mathf.Clamp(
+            targetPhi + input.y * CAMERA_SENSITIVITY, 
+            (Mathf.PI - MAX_CAMERA_PITCH) / 2,
+            Mathf.PI  - (Mathf.PI - MAX_CAMERA_PITCH) / 2
+            );
         
     }
 }
