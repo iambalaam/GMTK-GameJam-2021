@@ -9,7 +9,6 @@ public class CameraController : MonoBehaviour
     private float CAMERA_SENSITIVITY = 0.002f;
     private float CAMERA_SPEED = 5f;
     private float CAMERA_DISTANCE = 20f;
-    private float MAX_CAMERA_PITCH = Mathf.PI / 2;
 
     private float theta = Mathf.PI / 2;
     private float phi = Mathf.PI / 2;
@@ -24,17 +23,15 @@ public class CameraController : MonoBehaviour
     }
     void Update()
     {
+        Debug.Log(phi);
         phi = Mathf.Lerp(phi, targetPhi, Time.deltaTime * CAMERA_SPEED);
         theta = Mathf.Lerp(theta, targetTheta, Time.deltaTime * CAMERA_SPEED);
 
         targetTheta += rStickInput.x * CAMERA_SENSITIVITY;
         targetPhi = Mathf.Clamp(
-            targetPhi + rStickInput.y * CAMERA_SENSITIVITY,
-            (Mathf.PI - MAX_CAMERA_PITCH) / 2,
-            Mathf.PI - (Mathf.PI - MAX_CAMERA_PITCH) / 2
-            );
+            targetPhi + rStickInput.y * CAMERA_SENSITIVITY, 1.3f, 1.7f);
 
-        Vector3 targetPosition = cameraOrigin.transform.position +  new Vector3(
+        Vector3 targetPosition = cameraOrigin.transform.position + new Vector3(
             CAMERA_DISTANCE * Mathf.Sin(theta) * Mathf.Sin(phi),
             CAMERA_DISTANCE * Mathf.Cos(phi),
             CAMERA_DISTANCE * Mathf.Cos(theta) * Mathf.Sin(phi)
