@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(AudioSource))]
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
+    public AudioClip backgroundMusic;
 
     public enum Scene
     {
@@ -24,6 +26,10 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = backgroundMusic;
+        audio.Play();
     }
 
     public void LoadScene(Scene s)
