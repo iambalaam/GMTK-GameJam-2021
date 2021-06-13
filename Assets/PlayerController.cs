@@ -5,8 +5,10 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
+    private float DEAD_ZONE = 0.3f;
     private float MOVE_SPEED = 8;
     private float MOVE_ACCN = 0.05f;
+
 
     private Vector2 _input;
     private Vector3 _currentMovement;
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {        
         Vector3 targetMovement = new Vector3(_input.x, 0, 0) * MOVE_SPEED * Time.deltaTime;
+
         Vector3 movement = Vector3.Lerp(_currentMovement, targetMovement, MOVE_ACCN);
 
         _controller.Move(movement);
@@ -31,5 +34,9 @@ public class PlayerController : MonoBehaviour
     public void OnLStick(InputAction.CallbackContext ctx)
     {
         _input = ctx.ReadValue<Vector2>();
+        if (Mathf.Abs(_input.x) < DEAD_ZONE)
+        {
+            _input.x = 0;
+        }
     }
 }
