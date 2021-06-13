@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Lv2 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public Transform girl;
+    public Transform balloon;
     void Update()
     {
-        
+        Debug.Log((girl.transform.position - balloon.transform.position).magnitude);
+        if ((girl.transform.position - balloon.transform.position).magnitude < 5)
+        {
+            LevelManager.instance.LoadScene(LevelManager.Scene.Lv3);
+        }
     }
 }

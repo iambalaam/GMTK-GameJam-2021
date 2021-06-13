@@ -326,6 +326,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9525b2575dff67b428156323afc827a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &517190024 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d9ea1b3b0b288174f9c632274f52a670, type: 3}
+  m_PrefabInstance: {fileID: 517190019}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +792,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb4f62f2033f1a49af537440e741ebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  girl: {fileID: 517190024}
+  balloon: {fileID: 719972173}
 --- !u!114 &1480727270
 MonoBehaviour:
   m_ObjectHideFlags: 0
