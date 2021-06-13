@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,12 +5,12 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
 
-    private AsyncOperation _scene;
-
     public enum Scene
     {
         Lv1,
-        Lv2
+        Lv2,
+        Lv3,
+        Lv4
     }
 
     private void Awake()
@@ -28,15 +26,8 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public async void LoadScene(Scene s)
+    public void LoadScene(Scene s)
     {
-        _scene = SceneManager.LoadSceneAsync(s.ToString());
-        _scene.allowSceneActivation = false;
+        SceneManager.LoadScene(s.ToString());
     }
-
-    public async void NextScene()
-    {
-        _scene.allowSceneActivation = true;
-    }
-
 }
