@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
 
     private float CAMERA_SENSITIVITY = 0.002f;
     private float CAMERA_SPEED = 5f;
-    private float CAMERA_DISTANCE = 10f;
+    private float CAMERA_DISTANCE = 20f;
     private float MAX_CAMERA_PITCH = Mathf.PI / 2;
 
     private float theta = Mathf.PI / 2;
@@ -34,7 +34,7 @@ public class CameraController : MonoBehaviour
             Mathf.PI - (Mathf.PI - MAX_CAMERA_PITCH) / 2
             );
 
-        Vector3 targetPosition = new Vector3(
+        Vector3 targetPosition = cameraOrigin.transform.position +  new Vector3(
             CAMERA_DISTANCE * Mathf.Sin(theta) * Mathf.Sin(phi),
             CAMERA_DISTANCE * Mathf.Cos(phi),
             CAMERA_DISTANCE * Mathf.Cos(theta) * Mathf.Sin(phi)
