@@ -12,7 +12,7 @@ public class Floating : MonoBehaviour
     private void Start()
     {
         _body = GetComponent<Rigidbody>();
-         // _body.useGravity = false;
+        _body.useGravity = useGravity;
     }
     void FixedUpdate()
     {
