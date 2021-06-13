@@ -2200,6 +2200,10 @@ PrefabInstance:
       propertyPath: bouyancy
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 958171709582761494, guid: d538e8bc4ff2acf438ee0f25c3f5ab91, type: 3}
+      propertyPath: useGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2751135998457747069, guid: d538e8bc4ff2acf438ee0f25c3f5ab91, type: 3}
       propertyPath: m_Name
       value: Balloon
