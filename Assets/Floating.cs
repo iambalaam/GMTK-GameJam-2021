@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Floating : MonoBehaviour
 {
-    private Rigidbody _body;
+    public float bouyancy;
+    public bool useGravity;
 
-    private float bouyancy = 0.2f;
+    private Rigidbody _body;
 
     private void Start()
     {
         _body = GetComponent<Rigidbody>();
-        // _body.useGravity = false;
+         // _body.useGravity = false;
     }
     void FixedUpdate()
     {
