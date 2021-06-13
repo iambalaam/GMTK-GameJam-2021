@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
     private Camera cam;
     public Transform cameraOrigin;
 
-    private float CAMERA_SENSITIVITY = 0.01f;
+    private float CAMERA_SENSITIVITY = 0.002f;
     private float CAMERA_SPEED = 5f;
     private float CAMERA_DISTANCE = 10f;
     private float MAX_CAMERA_PITCH = Mathf.PI / 2;
