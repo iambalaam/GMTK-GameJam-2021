@@ -6,7 +6,7 @@ public class Floating : MonoBehaviour
 {
     private Rigidbody _body;
 
-    private float bouyancy = 0.2f;
+    private float bouyancy = 0.4f;
 
     private void Start()
     {
