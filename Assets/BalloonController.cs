@@ -4,8 +4,6 @@ using UnityEngine.InputSystem;
 public class BalloonController : MonoBehaviour
 {
     public Transform balloon;
-
-    float BALLOON_SPEED = 3f;
     Vector2 balloonDirection;
 
     private void Update()
