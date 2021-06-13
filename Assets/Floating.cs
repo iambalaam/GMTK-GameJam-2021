@@ -11,9 +11,9 @@ public class Floating : MonoBehaviour
     private void Start()
     {
         _body = GetComponent<Rigidbody>();
-        _body.useGravity = false;
+        // _body.useGravity = false;
     }
-    void Update()
+    void FixedUpdate()
     {
         _body.velocity += Vector3.up * bouyancy;
     }
