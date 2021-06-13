@@ -28,6 +28,7 @@ public class LevelManager : MonoBehaviour
         }
 
         AudioSource audio = GetComponent<AudioSource>();
+        audio.enabled = true;
         audio.clip = backgroundMusic;
         audio.Play();
     }
