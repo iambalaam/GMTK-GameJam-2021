@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
         _controller.Move(movement);
         transform.rotation = Quaternion.Euler(0, rotation, 0);
-        _animator.SetFloat("moveSpeed", movement.magnitude);
+        _animator.SetFloat("moveSpeed", movement.magnitude); ;
         _currentMovement = movement;
         _currentRoatation = rotation;
     }
