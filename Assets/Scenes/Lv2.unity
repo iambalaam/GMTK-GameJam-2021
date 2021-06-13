@@ -2198,7 +2198,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 958171709582761494, guid: d538e8bc4ff2acf438ee0f25c3f5ab91, type: 3}
       propertyPath: bouyancy
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 958171709582761494, guid: d538e8bc4ff2acf438ee0f25c3f5ab91, type: 3}
       propertyPath: useGravity
