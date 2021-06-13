@@ -281,6 +281,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6224853432989131253, guid: d9ea1b3b0b288174f9c632274f52a670, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 799a201608fcef945aa810086bf84368, type: 2}
     - target: {fileID: 919132149155446097, guid: d9ea1b3b0b288174f9c632274f52a670, type: 3}
       propertyPath: m_Name
       value: Girl_Rigged
@@ -289,6 +293,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c5ff7f78a84d850409b7ae6e4c674637, type: 2}
+    - target: {fileID: 5925764736661901846, guid: d9ea1b3b0b288174f9c632274f52a670, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d6010764327094b48a4727e95d3a76fc, type: 2}
+    - target: {fileID: 7282208830838575249, guid: d9ea1b3b0b288174f9c632274f52a670, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f057852e66563844a93ab429995124b4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ea1b3b0b288174f9c632274f52a670, type: 3}
 --- !u!1 &517190020 stripped
